@@ -21,3 +21,6 @@ Thumbs.db
 
 # FastAPI/Uvicorn specific
 .pytest_cache/
+
+# Encrypt and decrypt mechanism for posts
+content_manager.py

@@ -60,7 +60,7 @@ Remember to set the `X-API-Key` header when testing the protected endpoints.
 
 ## Encryption workflow
 
-All article files in the `/posts` directory are **encrypted** using the Fernet standard (`cryptography`) and are stored on GitHub as unreadable binary data. They can only be decrypted on the server using a secret key.
+All article files in the `/posts` directory are **encrypted** using the Fernet standard (`cryptography`) and are stored on GitHub as unreadable binary data. They can only be decrypted on the server using a secret key. You can read all articles on the main website at **https://azmarach.work/blog** when connected.
 
 Initial encryption for all files in `posts/`
 ```bash

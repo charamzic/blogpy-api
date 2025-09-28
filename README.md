@@ -41,7 +41,8 @@ The project follows a modular structure for maintainability:
 3.  **Configure API Key:**
     Create a file named **`.env`** in the project root and set your secret key:
     ```dotenv
-    ALLOWED_API_KEY="your_super_secret_key_here"
+    ALLOWED_API_KEY=your_super_secret_key_here
+    ENCRYPTION_KEY=your_encryption_key
     ```
 
 4.  **Run the server:**
@@ -56,3 +57,23 @@ The API will be accessible at `http://127.0.0.1:8000`.
 Access the interactive documentation to test the endpoints: `http://127.0.0.1:8000/docs`
 
 Remember to set the `X-API-Key` header when testing the protected endpoints.
+
+## Encryption workflow
+
+All article files in the `/posts` directory are **encrypted** using the Fernet standard (`cryptography`) and are stored on GitHub as unreadable binary data. They can only be decrypted on the server using a secret key.
+
+Initial encryption for all files in `posts/`
+```bash
+    python content_manager.py encrypt --all
+```
+Note: The encrypt --all command safely skips files that are already encrypted, preventing accidental double-encryption.
+
+Decrypt if you want to edit the article
+```bash
+    python content_manager.py decrypt prvni-clanek.cs.md
+```
+
+Encrypt again after edit
+```bash
+    python content_manager.py encrypt prvni-clanek.cs.md
+```

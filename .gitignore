@@ -1,0 +1,23 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Python specific
+*.log
+*.egg-info/
+dist/
+build/
+pip-log.txt
+
+# Local Configuration
+.env
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# FastAPI/Uvicorn specific
+.pytest_cache/
